@@ -27,10 +27,6 @@ RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath zip
 # Cài đặt Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Cài đặt Node.js và npm
-RUN curl -sL https://deb.nodesource.com/setup_18.x | bash - \
-    && apt-get install -y nodejs
-
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
@@ -50,11 +46,6 @@ RUN chown -R www-data:www-data /var/www/html \
 
 # Cài đặt dependencies
 RUN composer install --optimize-autoloader --no-dev
-
-# Build assets (nếu có)
-RUN if [ -f "package.json" ]; then \
-        npm ci --only=production && npm run build; \
-    fi
 
 # Copy script khởi tạo
 COPY docker/scripts/start.sh /usr/local/bin/start.sh

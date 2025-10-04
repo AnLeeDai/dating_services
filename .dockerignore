@@ -2,6 +2,13 @@
 /node_modules
 /vendor
 
+# Frontend build files (bỏ qua vì không dùng)
+package.json
+package-lock.json
+vite.config.js
+/resources/js/
+/resources/css/
+
 # Build artifacts
 /public/hot
 /public/storage
