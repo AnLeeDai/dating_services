@@ -1,0 +1,56 @@
+# Dependencies
+/node_modules
+/vendor
+
+# Frontend build files (bỏ qua vì không dùng)
+package.json
+package-lock.json
+vite.config.js
+/resources/js/
+/resources/css/
+
+# Build artifacts
+/public/hot
+/public/storage
+/storage/*.key
+
+# Environment files
+.env.local
+.env.development
+.env.testing
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Log files
+/storage/logs/*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache directories
+.cache/
+/bootstrap/cache/*.php
+
+# Testing
+/coverage/
+/.nyc_output
+
+# Temporary files
+*.tmp
+*.temp
+
+# Docker
+docker-compose.override.yml
