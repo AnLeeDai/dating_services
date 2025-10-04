@@ -10,5 +10,7 @@ use App\Http\Controllers\DatingController;
 // })->middleware('auth:sanctum');
 
 Route::get('/user', [UserController::class, 'getUser']);
+Route::get('/user/{id}', [UserController::class, 'getUserById']);
+Route::post('/upload-avatar', [UserController::class, 'uploadAvatar']);
 
 Route::get('/dating-duration', [DatingController::class, 'getDuration']);
