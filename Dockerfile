@@ -52,7 +52,9 @@ RUN chown -R www-data:www-data /var/www/html \
 RUN composer install --optimize-autoloader --no-dev
 
 # Build assets (nếu có)
-RUN npm ci && npm run build
+RUN if [ -f "package.json" ]; then \
+        npm ci --only=production && npm run build; \
+    fi
 
 # Copy script khởi tạo
 COPY docker/scripts/start.sh /usr/local/bin/start.sh
